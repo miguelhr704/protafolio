@@ -1,0 +1,13 @@
+
+$font1: 'Open Sans', sans-serif;
+$font2: 'Poppins', sans-serif;
+
+*{
+    
+    font-family: $font1;
+    color: $just-white;
+}
+
+body{
+    background-color: $primary-color;
+}
