@@ -1,0 +1,81 @@
+.proyectos{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .proyectos__cont{
+        width: 70%;       
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-gap: 8px;
+        border-radius: 20px;
+    }
+    .proyectos__text{
+        width: 100%;
+        padding-left: 14px;
+        font-size: 34px;
+        margin-bottom: 14px;
+        p{
+            color: $secondary-color;
+        }
+    }
+    .proyecto__item{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: .5s ;
+        border-radius: 20px;
+        .proyecto__item-title{
+            position: absolute;
+            font-family: $font2;
+            font-weight: 400;
+            z-index: 1;
+            top: 18px;
+        }
+        .proyecto__item-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            -webkit-filter: grayscale(100%);
+            border-radius: 20px;
+            transition: .5s;
+                filter: grayscale(100%);
+                &:hover{
+                -webkit-filter: grayscale(0%);
+                filter: grayscale(0%);
+                }
+        }
+        .proyecto__item-btn{
+            background-color: $secondary-color;
+            font-family: $font2;
+            border: none;
+            padding: 14px;
+            cursor: pointer;
+            position: absolute;
+            top: 72px;
+            opacity: .8;
+            transition: .5s;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        &.div1 { grid-area: 1 / 1 / 3 / 3; }
+        &.div2 { grid-area: 3 / 1 / 5 / 3; }
+        &.div3 { grid-area: 1 / 3 / 3 / 4; }
+        &.div4 { grid-area: 3 / 3 / 4 / 5; }
+        &.div5 { grid-area: 4 / 3 / 5 / 5; }
+    }
+}

@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar/Navbar"
 import Hero from "./Components/Hero/Hero";
 import Tecnologias  from "./Components/Tecnologias/Tecnologias"
+import Proyectos from "./Components/Proyectos/Proyectos";
 
 function App() {
   
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero/>
-      <Tecnologias key="tecnologias"/>
+      <Tecnologias/>
+      <Proyectos/>
     </div>
   );
 }

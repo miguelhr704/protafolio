@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
     .tecnologias__text{
         width: 100%;
         padding-left: 14px;
@@ -61,5 +62,38 @@
                 color: $secondary-color;
             }
         }        
+    }
+    .tecnologias__circ{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: $ligth-secondary;
+        border-radius: 50%;
+        top: 338px;
+        left: 795px;
+        z-index: 0;
+        opacity: 0.3;
+    }
+    .tecnologias__circ2{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        top: 334px;
+        left: 256px;
+        z-index: -1;
+        opacity: 0.3;
+    }
+    .tecnologias__circ3{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: $secondary-color;
+            border-radius: 50%;
+            top: 334px;
+            left: 1279px;
+            z-index: -1;
+            opacity: .3;
     }
 }

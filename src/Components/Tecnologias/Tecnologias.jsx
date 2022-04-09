@@ -27,6 +27,9 @@ function Tecnologias() {
       <div className="tecnologias__text">
         <p>Tecnologias</p>
       </div>
+      <div className="tecnologias__circ"></div>
+      <div className="tecnologias__circ2"></div>
+      <div className="tecnologias__circ3"></div>
       <div className="tecnologias__cont">
         <TecItem
           imgSrc="../../images/html.png"
