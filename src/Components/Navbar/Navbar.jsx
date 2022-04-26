@@ -1,29 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
 function Navbar() {
+  const [transp, setTransp] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = function () {
+      var y = window.scrollY;
+      if (y > 120) {
+        setTransp(true);
+      } else {
+        setTransp(false);
+      }
+    };
+  }, []);
+
   return (
-    <div className="navBar">
+    <div className={transp ? "navBar ver" : "navBar"}>
       <p className="navBar__logo">
-        <a href="http://">Portafolio</a>
+        <Link to="#hero" smooth>
+          Portafolio
+        </Link>
       </p>
       <div className="navBar__cont">
         <ul className="navBar__cont-menu">
           <li>
-            <a href="/">Inicio</a>
+            <Link to="#hero" smooth>
+              Inicio
+            </Link>
           </li>
           <li>
-            <a href="/tecnologias">Tecnologias</a>
+            <Link to="#tecnologias" smooth>
+              Tecnologias
+            </Link>
           </li>
           <li>
-            <a href="/">Proyectos</a>
+            <Link to="#proyectos" smooth>
+              Proyectos
+            </Link>
           </li>
           <li>
-            <a href="/">Diplomas y Certificaciones</a>
+            <Link to="#Cursoss" smooth>
+              Cursos y Certificaciones
+            </Link>
           </li>
         </ul>
       </div>
       <p className="navBar__contacto">
-        <a href="http://">Contacto</a>
+        <Link to="#contactos" smooth>
+          Contacto
+        </Link>
       </p>
     </div>
   );

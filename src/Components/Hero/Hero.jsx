@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="hero">
+    <section className="hero" id="hero">
       <div className="hero__text">
         <div className="hero__text-cont">
           <h1 className="hero__text-contTitle">
@@ -16,9 +16,9 @@ function Hero() {
       <div className="hero__img">
         <div className="hero__circle"></div>
         <div className="hero__circle2"></div>
-        <img src="../../images/person.png" alt="" srcset="" />
+        <img src="../../images/fotoPort.png" alt="" srcset="" />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,13 +1,51 @@
-.hero{
+.hero{  
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 890px;
+  overflow: hidden;
+  @include media(desktop-l){
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 890px;
     overflow: hidden;
-    .hero__text{
+  }
+  @include media(desktop-s){
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 890px;
+    overflow: hidden;
+  }
+  @include media(mobile-only){
+    width: 100%;
+    height:  550px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+  @include media(smart-s){
+    width: 100%;
+    height:  550px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+    .hero__text{        
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 80px;
+        @include media(mobile-only){
+            margin-left: 20px;
+        }
+        @include media(smart-s){
+            margin-left: 20px;
+        }
+
         .hero__text-cont{
             width: 100%;
             display: flex;
@@ -15,15 +53,18 @@
             align-items: start;
             padding-left: 8px;
             border-left: 1px solid $secondary-color;
+            
             .hero__text-contTitle{
-                font-size: 34px;
-                font-weight: 700;
                 z-index: 1;
+                @include font-size(32px);
+                font-weight: 700;                
             }
+
             .hero__text-contText{
-                font-family: $font2;
-                font-weight: 100;
                 z-index: 1;
+                font-family: $font2;
+                font-weight: 100;                
+
                 span{
                     font-size: 28px;
                     color: $secondary-color;
@@ -33,33 +74,90 @@
     }
     .hero__img{
         position: relative;
-        img{
+          
+        img{    
+            width: 600px;   
             position: absolute;
-            top: 145px;
-            right: -2px;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+            top: 128px;
+            right: 90px;            
+            border-radius: 50%;
+            filter: grayscale(100%);            
+            @include media(desktop-l){
+                right: 18px;
+            }
+            @include media(desktop-s){
+                right: -128px;
+            }
+            @include media(mobile-only){
+                width: 300px;
+                right: -88px;
+                top: 44px;
+            }
+            @include media(smart-s){
+                width: 300px;
+                right: -156px;
+                top: 44px;
+            }
         }
+
         .hero__circle{
-            position: absolute;
             width: 600px;
             height: 600px;
-            background-color: #6a00f4;
-            border-radius: 50%;
-            top: 107px;
-            right: 261px;
-            z-index: 0;
-        }
-        .hero__circle2{
             position: absolute;
+            top: 107px;
+            right: 90px;
+            z-index: 0;       
+            border-radius: 50%;            
+            opacity: .5;
+            background-color: $secondary-color;
+            @include media(desktop-l){
+                right: 18px;
+            }
+            @include media(desktop-s){
+                right: -128px;
+            }
+            @include media(mobile-only){
+                width: 300px;
+                height: 300px;
+                right: -88px;
+                top: 32px;
+            }
+            @include media(smart-s){
+                width: 300px;
+                height: 300px;
+                right: -156px;
+                top: 32px;
+            }
+        }
+
+        .hero__circle2{
             width: 1000px;
             height: 1000px;
-            background-color: $secondary-color;
-            border-radius: 50%;
+            position: absolute;
             top: -68px;
-            right: 261px;
-            z-index: -1;
+            right: 90px;
+            z-index: -1;            
+            border-radius: 50%;
+            background-color: $secondary-color;            
             opacity: .3;
+            @include media(desktop-l){
+                right: 18px;
+            }
+            @include media(desktop-s){
+                right: -128px;
+            }
+            @include media(mobile-only){
+                width: 400px;
+                height: 400px;
+                right: -130px;
+                top: -21px;
+            }
+            @include media(smart-s){
+                width: 400px;
+                height: 400px;
+                right: -199px;
+                top: -21px;
+            }
         }
     }
 }

@@ -1,31 +1,55 @@
 .navBar{
-    position: fixed;
-    top: 0;
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    z-index: 1;
+    width: 100%;
     height: 100px;
     padding: 14px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
     background-color: $tranparente;
+    transition: .5s;
+    @include media(smart-s){
+        width: 320px;
+    }
+
+    &.ver{
+        background-color: $primary-color;
+    }
+
     .navBar__logo{
         font-family: $font2;
         font-size: 28px;
+
         a{
             text-decoration: none;
             color: $just-white;
             transition: .3s;
+
             &:hover{
                 color: $alternative-color;
             }
         }
         
     }
-    .navBar__contacto{
+    .navBar__contacto{  
         font-family: $font2;
         font-size: 18px;
+        @include media(desktop-l){
+            display: flex;
+          }
+          @include media(desktop-s){
+            display: flex;
+          }
+          @include media(mobile-only){
+            display: none   ;
+        }
+        @include media(smart-s){
+            display: none   ;
+          }
+
         a{
             text-decoration: none;
             color: $just-white;
@@ -37,11 +61,24 @@
         
     }
     .navBar__cont{
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
         font-size: 18px;
+        @include media(desktop-l){
+            display: flex;
+          }
+          @include media(desktop-s){
+            display: flex;
+          }
+          @include media(mobile-only){
+            display: none   ;
+        }
+        @include media(smart-s){
+            display: none   ;
+          }
+          
         .navBar__cont-menu{
             display: flex;
             flex-direction: row;

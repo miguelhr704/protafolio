@@ -2,6 +2,17 @@
 $font1: 'Open Sans', sans-serif;
 $font2: 'Poppins', sans-serif;
 
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+	line-height: calculateRem($size)*1.5;
+}
+
 *{
     
     font-family: $font1;
@@ -10,4 +21,7 @@ $font2: 'Poppins', sans-serif;
 
 body{
     background-color: $primary-color;
+}
+html{
+	height: 100%;
 }

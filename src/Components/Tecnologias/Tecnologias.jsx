@@ -23,65 +23,66 @@ function Tecnologias() {
     }
   };
   return (
-    <div className="tecnologias">
+    <section className="tecnologias" id="tecnologias">
       <div className="tecnologias__text">
         <p>Tecnologias</p>
       </div>
-      <div className="tecnologias__circ"></div>
-      <div className="tecnologias__circ2"></div>
-      <div className="tecnologias__circ3"></div>
+
+      <InfoTec ver={verExp} exp={exp} tec={tec} />
       <div className="tecnologias__cont">
-        <TecItem
-          imgSrc="../../images/html.png"
-          exp1="2 años de Experiencia"
-          tec1="HTML"
-          muestraExp={muestraExp}
-        />
-        <InfoTec ver={verExp} exp={exp} tec={tec} />
-        <TecItem
-          imgSrc="../../images/css.png"
-          exp1="2 años de Experiencia"
-          tec1="CSS"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/js.png"
-          exp1="2 años de Experiencia"
-          tec1="JavaScript"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/sql.png"
-          exp1="2 años de Experiencia"
-          tec1="MySQL"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/react.png"
-          exp1="1 años de Experiencia"
-          tec1="React"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/sass.png"
-          exp1="1 años de Experiencia"
-          tec1="SASS"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/git.png"
-          exp1="1 años de Experiencia"
-          tec1="GIT"
-          muestraExp={muestraExp}
-        />
-        <TecItem
-          imgSrc="../../images/github.png"
-          exp1="1 años de Experiencia"
-          tec1="GitHub"
-          muestraExp={muestraExp}
-        />
+        <div className="tecnologias__cont-flex">
+          <TecItem
+            imgSrc="../../images/html.png"
+            exp1="2 años de Experiencia"
+            tec1="HTML"
+            muestraExp={muestraExp}
+          />
+
+          <TecItem
+            imgSrc="../../images/css.png"
+            exp1="2 años de Experiencia"
+            tec1="CSS"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/js.png"
+            exp1="2 años de Experiencia"
+            tec1="JavaScript"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/sql.png"
+            exp1="2 años de Experiencia"
+            tec1="MySQL"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/react.png"
+            exp1="1 años de Experiencia"
+            tec1="React"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/sass.png"
+            exp1="1 años de Experiencia"
+            tec1="SASS"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/git.png"
+            exp1="1 años de Experiencia"
+            tec1="GIT"
+            muestraExp={muestraExp}
+          />
+          <TecItem
+            imgSrc="../../images/github.png"
+            exp1="1 años de Experiencia"
+            tec1="GitHub"
+            muestraExp={muestraExp}
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

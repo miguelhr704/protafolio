@@ -1,44 +1,82 @@
 .proyectos{
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    width: 100%;
+    height: 400px;
+    position: relative;
+
     .proyectos__cont{
-        width: 70%;       
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        grid-gap: 8px;
-        border-radius: 20px;
+        display: flex;
+        width: 90%; 
+        overflow: auto;
+        position: absolute;
+        top: 90%; 
+        left: 50%;
+        transform: translate(-50%, -50%);        
+        @include media(desktop-l) {
+            position: absolute;
+            top: 90%; left: 50%;
+            transform: translate(-50%, -50%);        
+            width: 90%;        
+            display: flex;
+            overflow: auto;
+          }      
+        @include media(desktop-s) {
+            display: flex;
+            overflow: auto;
+            width: 90%;  
+            position: absolute;
+            top: 90%; left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        @include media(smart-s){
+            overflow-y: scroll;
+        }
+
+        .proyectos__cont-flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 30px 20px;            
+        }
     }
+
     .proyectos__text{
         width: 100%;
-        padding-left: 14px;
-        font-size: 34px;
         margin-bottom: 14px;
+        padding-left: 14px;        
+        font-size: 34px;
+
         p{
             color: $secondary-color;
         }
     }
+
     .proyecto__item{
-        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: center;    
+        width: 242px;
+        height: 240px;
+        margin-left: 12px;
+        border-radius: 50%;
         position: relative;
         transition: .5s ;
-        border-radius: 20px;
+        background: rgba(57, 0, 149, 0.41);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.4px);
+        -webkit-backdrop-filter: blur(5.4px);
+        
         .proyecto__item-title{
-            position: absolute;
-            font-family: $font2;
-            font-weight: 400;
             z-index: 1;
-            top: 18px;
+            font-family: $font2;
+            font-size: 18px;
+            font-weight: 400;
+            color: $just-white;
         }
         .proyecto__item-img{
             width: 100%;
@@ -59,11 +97,10 @@
             font-family: $font2;
             border: none;
             padding: 14px;
-            cursor: pointer;
-            position: absolute;
-            top: 72px;
+            cursor: pointer;            
             opacity: .8;
             transition: .5s;
+            border-radius: 20px;
             &:hover{
                 opacity: 1;
             }
@@ -77,5 +114,237 @@
         &.div3 { grid-area: 1 / 3 / 3 / 4; }
         &.div4 { grid-area: 3 / 3 / 4 / 5; }
         &.div5 { grid-area: 4 / 3 / 5 / 5; }
+    }
+}
+
+.modalProyecto{
+    @include media(mobile-only){
+      }
+      @include media(smart-s) {
+          top:23px;
+      }
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    z-index: 6;
+    padding: 22px;
+    /*position: absolute;    
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    position: sticky;  
+    top: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(7.4px);    
+    background: rgba(49, 49, 49, 0.48);
+    transition: .3s;
+    &.ver{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+    .modalProyecto__imagen{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 6;
+        width: 80%;
+        height: 80vh;
+        margin: 0 auto;
+        border-radius: 20px;
+        background: rgba(78, 78, 78, 0.7);
+        backdrop-filter: blur(4.9px);
+        -webkit-backdrop-filter: blur(4.9px);
+        img{
+            width: 100%;
+            height: 80%;
+            object-fit: contain;
+            object-position: center center;
+        }
+        .modalProyecto__cont-HeadIcon{
+            display: flex;
+            justify-content: center;
+            width: 123px;
+            height: 38px;
+            background-color: #858ae3;
+            border-radius: 20px;
+            font-family: "Poppins", sans-serif;
+            color: #FAFAFF;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        &.ver{
+            display: flex;
+        }
+    }
+    .modalProyecto__cont{ 
+        @include media(smart-s) {
+            width: 100%;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: scroll;       
+        width: 80%;
+        height: 80vh;
+        border-radius: 20px;
+        background: rgba(78, 78, 78, 0.7);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4.9px);
+        -webkit-backdrop-filter: blur(4.9px);
+        .modalProyecto__cont-Head{            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 14px;
+            position: sticky;
+            top: 0;
+            background-color: #444444ab;
+            backdrop-filter: blur(5.4px);
+            -webkit-backdrop-filter: blur(5.4px);
+            .modalProyecto__cont-Headtitle{
+                @include media(smart-s) {
+                    font-size: 18px;
+                } 
+                color: $just-white;
+            }
+            .modalProyecto__cont-HeadIcon{
+                width: 50px;
+                height: 50px;
+                background-color: $secondary-color;
+                border-radius: 50%;
+                font-family: $font2;
+                color: $just-white;
+                text-align: center;
+                padding-top: 10px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+        }        
+        .modalProyecto__cont-body{
+            @include media(smart-s) {
+                width: 100%;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            .modalProyecto__cont-bodyText{
+                @include media(smart-s) {
+                    width: 95%;
+                    font-size: 12px;
+                } 
+                width: 80%;
+                background-color: #1503254a;
+                padding: 22px;
+                border-radius: 20px;
+                text-align: center;
+                color: $just-white;
+                font-size: 16px;                
+            }
+            .modalProyecto__cont-tec{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 14px;
+                .modalProyecto__cont-tecTitle{
+                    text-align: left;
+                    color: $just-white;
+                }
+                .modalProyecto__cont-tecText{
+                    width: 80%;
+                    background-color: #1503254a;
+                    padding: 22px;
+                    border-radius: 20px;
+                    text-align: center;
+                    color: $just-white;
+                    font-size: 16px;
+                }
+            }
+            .modalProyecto__cont-bodyImgCont{
+                @include media(mobile-only) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 95%;                    
+                    margin-bottom: 8px;
+                } 
+                @include media(smart-s) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 95%;                    
+                    margin-bottom: 8px;
+                }                
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows: auto;
+                width: 80%;
+                margin-top: 40px;
+                gap: 12px;                
+                padding: 20px;
+                border-radius: 20px;
+                background-color: #1503254a;                
+                .img{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 20px;
+                    transition: transform .3s;
+                    margin-bottom: 8px;
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                    &.ver{
+                        @include media(desktop-l) {
+                            width: 70%;
+                            top: 554px;
+                            margin: 0 auto;
+                          }
+                      
+                          @include media(desktop-s) {
+                            width: 90%;
+                            top: 671px;
+                            left: 40px;
+                          }
+                          @include media(mobile-only) {
+                            width: 80%;
+                            top: 1170px;
+                            left: -3px;
+                          }
+                        @include media(smart-s){
+                            width: 80%;
+                            top: 1170px;
+                            left: -3px;
+                        }
+                        position: absolute;
+                        width: 50%;
+                        height: auto;
+                        object-fit: cover;
+                        object-position: center center;
+                        top: 412px;
+                    }
+                }
+            }            
+        }              
     }
 }

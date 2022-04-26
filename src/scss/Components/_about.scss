@@ -1,0 +1,124 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;    
+    justify-content: center;
+    align-items: center;
+    .circ {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 119px;
+        left: 233px;
+        z-index: -1;
+        background-color: $secondary-color;
+        opacity: .7;
+        border-radius: 50%;
+        @include media(desktop-l) {
+            display: block;
+        }
+
+        @include media(desktop-s) {
+            display: block;
+        }
+
+        @include media(smart-s) {
+            display: none;
+        }
+        @include media(mobile-only){
+            display: none;
+         }
+    }
+
+    .circ2 {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 306px;
+        left: 788px;
+        z-index: -1;
+        background-color: #4a53f3;
+        opacity: .5;
+        border-radius: 50%;
+        @include media(desktop-l) {
+            display: block;
+            top: 496px;
+            left: 655px;
+        }
+        @include media(desktop-s) {
+            display: block;
+            left: 330px;
+        }
+        @include media(smart-s) {
+            display: none;
+        }
+        @include media(mobile-only){
+            display: none;
+         }
+    }
+
+    .circ3 {
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 149px;
+        left: 1315px;
+        z-index: -1;
+        background-color: $ligth-secondary;
+        opacity: .5;
+        border-radius: 50%;       
+        @include media(desktop-l) {
+            display: block;
+            left: 960px;
+        }
+        @include media(desktop-s) {
+            display: block;
+            left: 570px;
+        }
+        @include media(smart-s) {
+            display: none;
+        }
+        @include media(mobile-only){
+            display: none;
+         }
+    }
+
+    .about__cont {
+        width: 80%;
+        position: relative;
+        padding: 22px;
+        background: rgba(49, 49, 49, 0.49);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(8.2px);        
+        border-radius: 20px;        
+        z-index: 1;
+        @include media(smart-s) {
+            padding:12px;
+         }
+         @include media(mobile-only){
+            padding:12px;
+         }
+
+        p {
+            display: flex;
+            flex-direction: column;     
+            z-index: 1;
+            padding-left: 20px;            
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 22px;
+            @include media(smart-s) {
+                font-size: 12px; 
+                padding-left: 0;
+             }
+             @include media(mobile-only){
+                 font-size: 16px; 
+                padding-left: 0;
+              }
+        }
+    }
+}

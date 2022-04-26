@@ -1,99 +1,165 @@
-.tecnologias{
+.tecnologias {
+  @include media(smart-s) {
+    height: 500px;
+  }
+  .infoTec {
+    @include media(desktop-l) {
+      top: 540px;
+    left: 584px;
+    }
+
+    @include media(desktop-s) {
+      top: 574px;
+      left: 393px;
+    }
+    @include media(mobile-only){
+      top: 524px;
+      left: 26px;      
+  }
+  @include media(smart-s) {
+    top: 585px;
+    left: 26px;
+  }
+    z-index: 1;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    .tecnologias__text{
-        width: 100%;
-        padding-left: 14px;
-        font-size: 34px;
-        margin-bottom: 14px;
-        p{
-            color: $secondary-color;
-        }
+    justify-content: space-evenly;
+    align-items: flex-start;
+    left: 635px;
+    top: 394px;
+    padding: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    width: 300px;
+    opacity: 0;
+    transition: 0.2s;
+    border-left: 1px solid $secondary-color;
+    &.ver {
+      opacity: 1;
     }
-    .tecnologias__cont{
-        width: 100%;
+    span {
+      color: $secondary-color;
+    }
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  position: relative;
+  margin-bottom: 100px;
+  .tecnologias__text {
+    width: 100%;
+    padding-left: 14px;
+    font-size: 34px;
+    margin-bottom: 14px;
+    p {
+      color: $secondary-color;
+    }
+  }
+  .tecnologias__cont {
+    @include media(desktop-l) {
+      position: absolute;
+      top: 100%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 90%;
+
+      display: flex;
+      overflow: auto;
+      }
+  
+      @include media(desktop-s) {
+        position: absolute;
+        top: 100%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 90%;
+
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        overflow: auto;
+      }
+    @include media(smart-s) {
+      position: absolute;
+      top: 90%; left: 50%;
+      transform: translate(-50%, -50%);      
+      max-width: 320px;
+      display: flex;
+      overflow: auto;
+    }
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    .tecnologias__cont-flex{
+       // inside spacing
+       padding: 30px 20px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-wrap: nowrap;
+      @include media(desktop-l) {
+        // inside spacing
+        padding: 30px 20px;
+        padding-left: 240px;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      @include media(desktop-s) {
+        // inside spacing
+        padding: 30px 20px;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      @include media(mobile-only){
+        padding-left: 1240px;
+      }
+      @include media(smart-s) {
+        // inside spacing
+        padding: 30px 20px;
+        padding-left: 1258px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      .tecnologias__cont-item {
         position: relative;
-        .tecnologias__cont-item{
-            position: relative;
-            .tecnologias__img{
-                width: 140px;
-                height: 100%;
-                object-fit: cover;
-                object-position: center center;
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-                transition: .5s;
-                &:hover{
-                    cursor: pointer;
-                    transform: scale(1.2);
-                    -webkit-filter: grayscale(0%);
-                    filter: grayscale(0%);
-                }
-            }
-            
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: #858ae37d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 12px;
+        .tecnologias__img {
+          width: 70%;
+          object-fit: cover;
+          object-position: center center;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+          transition: 0.5s;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+          }
         }
-        .infoTec{
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: flex-start;
-            left: 107px;
-            top: 245px;
-            padding: 14px;
-            font-size: 22px;
-            font-weight: 700;
-            width: 520px;
-            opacity: 0;
-            transition: 0.2s;
-            border-left: 1px solid $secondary-color;            
-            &.ver{
-                opacity: 1;
-            }
-            span{
-                color: $secondary-color;
-            }
-        }        
+      } 
     }
-    .tecnologias__circ{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background-color: $ligth-secondary;
-        border-radius: 50%;
-        top: 338px;
-        left: 795px;
-        z-index: 0;
-        opacity: 0.3;
-    }
-    .tecnologias__circ2{
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background-color: $secondary-color;
-        border-radius: 50%;
-        top: 334px;
-        left: 256px;
-        z-index: -1;
-        opacity: 0.3;
-    }
-    .tecnologias__circ3{
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background-color: $secondary-color;
-            border-radius: 50%;
-            top: 334px;
-            left: 1279px;
-            z-index: -1;
-            opacity: .3;
-    }
+       
+  }
+  
 }
