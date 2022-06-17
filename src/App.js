@@ -23,6 +23,7 @@ function App() {
   const [proDesc, setProDesc] = useState("");
   const [proTec, setProTec] = useState("");
   const [proImg, setProImg] = useState([]);
+  const [rick, setrick] = useState([]);
 
   const muestraPro = (divn) => {
     
@@ -56,11 +57,17 @@ function App() {
       desc: "Esta webApp se desarrollo para una empresa de banquetes para llevar un control tanto de las ventas como el consumo que se tenia por parte de los trabajadores de las empresas a las cuales se les da servicio, registrando el numero de empleado, el platillo que consumió, las cantidad el precio y el tipo de pago, también se muestran listas de los platillos y de el consumo total de los empleados. ",
       tec: "HTML, CSSS, SASS, JavaScript, ReactJs, NodeJs, Express FireBase",
       img: [
-        "../../images/innas1.png",
-        "../../images/innas2.png",
-        "../../images/innas3.png",
-        "../../images/innas4.png",
-        "../../images/innas5.png",
+        "../../images/screen1.png",
+        "../../images/screen2.png",
+        "../../images/screen3.png",
+        "../../images/screen4.png",
+        "../../images/screen5.png",
+        "../../images/screen6.png",
+        "../../images/screen7.png",
+        "../../images/screen8.png",
+        "../../images/screen9.png",
+        "../../images/screen10.png",
+        "../../images/screen11.png",
       ],
     },
     {
@@ -116,6 +123,12 @@ function App() {
       setProImg("");
     }
   };
+ const url = 'https://rickandmortyapi.com/api/character';
+  const api = async (url) =>{
+    const info = await fetch(url)
+    .then(response => response.json())
+    .then(data =>setrick(data));
+  } 
 
   return (
     <BrowserRouter>
